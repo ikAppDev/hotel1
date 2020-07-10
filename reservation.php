@@ -1,26 +1,5 @@
 <?php include'init.php';?>
-<?php
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=bdd', 'root', '');
 
-if(isset($_POST['forminscription'])) {
-   $full_name = htmlspecialchars($_POST['full_name']);
-   $email = htmlspecialchars($_POST['email']);
-   $enter_date = htmlspecialchars($_POST['enter_date']);
-$out_date = htmlspecialchars($_POST['out_date']);
-	  $campany = htmlspecialchars($_POST['campany']);
-if(!empty($_POST['full_name']) AND !empty($_POST['email']) AND !empty($_POST['enter_date']) AND !empty($_POST['out_date'] )AND !empty($_POST['type_room'] ) AND !empty($_POST['campany'] ) ) {
-
-                     $insertmbr = $bdd->prepare("INSERT INTO reservation(email,full_name,enter_date,out_date,campany,type_room) VALUES(?,?,?,?,?,?)");
-                     $insertmbr->execute(array($email,$full_name,$enter_date,$out_date,$campany,$type_room));
-                     header('Location: index.php');
-
-
-
-   }
-}
-
-
-?>
 <div class="top ">
 </div>
 <div class="overly">
