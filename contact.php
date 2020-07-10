@@ -1,23 +1,5 @@
 <?php include'init.php';?>
-<?php
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=bdd', 'root', '');
 
-if(isset($_POST['send'])) {
-   $full_name = htmlspecialchars($_POST['full_name']);
-   $email = htmlspecialchars($_POST['email']);
-   $msg = htmlspecialchars($_POST['msg']);
-if(!empty($_POST['full_name']) AND !empty($_POST['email']) AND !empty($_POST['msg'])   ) {
-
-                     $insertmbr = $bdd->prepare("INSERT INTO msg(full_name,email,msg) VALUES(?,?,?)");
-                     $insertmbr->execute(array($full_name,$email,$msg));
-                     header('Location: index.php');
-
-
-
-
-   }
-}
-?>
 <div class="top ">
 </div>
 <div class="overly">
